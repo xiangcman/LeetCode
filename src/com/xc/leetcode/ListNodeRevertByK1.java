@@ -1,12 +1,12 @@
 package com.xc.leetcode;
 
 /**
- * 每k位进行旋转链表
+ * 每k位进行旋转链表，不够k位的时候不反转
  */
-public class ListNodeRevertByK {
+public class ListNodeRevertByK1 {
     public static void main(String[] args) {
         ListNode listNode = ListNodeHelper.initListNode();
-        ListNode revert = revert(listNode, 3);
+        ListNode revert = revert(listNode, 4);
         ListNodeHelper.print(revert);
     }
 
@@ -16,6 +16,15 @@ public class ListNodeRevertByK {
         ListNode next = null;//下一个结点
         ListNode prev = null;//上一个结点
         int i = 0;
+        int length = 0;
+        while (listNode != null) {
+            listNode = listNode.next;
+            length++;
+        }
+        if (length < k) {
+            return head;
+        }
+        listNode = head;
         while (listNode != null && i < k) {
             next = listNode.next;
             listNode.next = prev;//把上一个结点指向当前结点的next结点，顺序颠倒了
@@ -23,13 +32,11 @@ public class ListNodeRevertByK {
             listNode = next;
             i++;
         }
-
         if (next != null) {
             //此处需要用到head结点，因为最后在拼接的时候实际上是第一个点是作为第一轮的反转最后的一个点
             head.next = revert(next, k);
         }
         //最后返回的时候用反转后的第一轮的第一个结点作为返回
         return prev;
-
     }
 }
