@@ -2,6 +2,24 @@ package com.xc.leetcode;
 
 
 public class ListNodeHelper {
+    /**
+     * 根据数组得到一个链表
+     *
+     * @param array
+     * @return
+     */
+    public static ListNode getListNodeByArray(int[] array) {
+        ListNode listNode = new ListNode(-1);
+        ListNode head = listNode;
+        for (int i = 0; i < array.length; i++) {
+            ListNode current = new ListNode(-1);
+            current.val = array[i];
+            listNode.next = current;
+            listNode = current;
+        }
+        return head.next;
+    }
+
     public static ListNode initListNode() {
         ListNode prev = null;
         ListNode my = null;
