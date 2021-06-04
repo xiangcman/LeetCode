@@ -1,5 +1,8 @@
 package com.xc.leetcode;
 
+import com.xc.leetcode.listnode.ListNode;
+import com.xc.leetcode.listnode.ListNodeHelper;
+
 /**
  * 求链表中倒数第k个结点
  */

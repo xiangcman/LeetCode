@@ -1,4 +1,4 @@
-package com.xc.leetcode;
+package com.xc.leetcode.treenode;
 
 /**
  * 输入两棵二叉树A，B，判断B是不是A的子结构

@@ -1,4 +1,4 @@
-package com.xc.leetcode;
+package com.xc.leetcode.listnode;
 
 /**
  * 判断链表是不是有环

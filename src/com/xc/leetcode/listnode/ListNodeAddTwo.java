@@ -1,4 +1,4 @@
-package com.xc.leetcode;
+package com.xc.leetcode.listnode;
 
 /**
  * 两个链表相加，从末尾开始相加，最终得到一个链表

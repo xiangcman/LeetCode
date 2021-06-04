@@ -1,4 +1,4 @@
-package com.xc.leetcode;
+package com.xc.leetcode.listnode;
 
 /**
  * 每k位进行旋转链表

@@ -1,4 +1,4 @@
-package com.xc.leetcode;
+package com.xc.leetcode.treenode;
 
 /**
  * 求二叉树的深度

@@ -1,4 +1,4 @@
-package com.xc.leetcode;
+package com.xc.leetcode.listnode;
 
 
 public class ListNodeRevert {

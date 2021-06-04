@@ -1,4 +1,4 @@
-package com.xc.leetcode;
+package com.xc.leetcode.treenode;
 
 public class TreeNodeHelper {
     public static TreeNode init() {
