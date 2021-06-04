@@ -20,6 +20,11 @@ public class ListNodeHelper {
         return head.next;
     }
 
+    /**
+     * 初始化一个0到9的链表
+     *
+     * @return
+     */
     public static ListNode initListNode() {
         ListNode prev = null;
         ListNode my = null;
@@ -58,6 +63,9 @@ public class ListNodeHelper {
         return my;
     }
 
+    /**
+     * @param listNode
+     */
     public static void print(ListNode listNode) {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
@@ -66,7 +74,8 @@ public class ListNodeHelper {
             sb.append(",");
             listNode = listNode.next;
         }
-        sb.append("]");
-        System.out.println("print:" + sb.toString());
+        String sub = sb.substring(0, sb.length() - 1);
+        sub += "]";
+        System.out.println("print:" + sub);
     }
 }
