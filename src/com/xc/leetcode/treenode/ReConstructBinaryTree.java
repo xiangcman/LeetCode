@@ -1,4 +1,4 @@
-package com.xc.leetcode;
+package com.xc.leetcode.treenode;
 
 import com.xc.leetcode.treenode.TreeNode;
 
@@ -8,6 +8,7 @@ import java.util.Arrays;
  * 根据二叉树的前序遍历、和中序遍历顺序求出二叉树结构。
  * <p>
  * 前序遍历是从父节点到左节点，再到右节点
+ * 中序遍历是左结点到根结点再到右结点
  */
 public class ReConstructBinaryTree {
     /**
