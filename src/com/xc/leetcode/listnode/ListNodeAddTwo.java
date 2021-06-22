@@ -20,8 +20,6 @@ public class ListNodeAddTwo {
         ListNode v1 = l1, v2 = l2;
         int carry = 0;
         ListNode pre = null;
-//        ListNode head = new ListNode(0);
-//        ListNode cur = head;
         while (v1 != null || v2 != null) {
             int x = (v1 == null) ? 0 : v1.val;   //如果节点不为空，获取值
             int y = (v2 == null) ? 0 : v2.val;
@@ -30,8 +28,6 @@ public class ListNodeAddTwo {
             ListNode current = new ListNode(sum % 10);  //计算出结果中，当前位数的数值。
             current.next = pre;
             pre = current;
-//            cur.next = next;
-//            cur = cur.next;
             if (v1 != null) v1 = v1.next;
             if (v2 != null) v2 = v2.next;
         }
@@ -41,7 +37,6 @@ public class ListNodeAddTwo {
             return first;
         }
         return pre;
-//        return head.next;
     }
 
     private static ListNode revert(ListNode head) {

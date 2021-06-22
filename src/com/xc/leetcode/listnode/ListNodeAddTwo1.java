@@ -10,6 +10,7 @@ public class ListNodeAddTwo1 {
     }
 
     public static ListNode addTwoListNode(ListNode l1, ListNode l2) {
+        //先创建一个虚拟的结点，在最后取链表的时候直接取它的下一个节点
         ListNode dummyHead = new ListNode(0);
         ListNode curr = dummyHead;
         int carry = 0;

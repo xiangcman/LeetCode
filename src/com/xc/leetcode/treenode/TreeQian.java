@@ -6,6 +6,16 @@ import java.util.List;
 
 /**
  * 二叉树的前序遍历:先是当前结点，然后左结点，然后是右结点
+ * /**
+ *  * 二叉树的中序遍历:先是左结点，然后当前结点，然后是右结点
+ *              *   1
+ *              * /  \
+ *           *   2    3
+ *           *  / \  / \
+ *           * 4  5 6  7
+ *  *
+ *  * 输出：[1, 2, 4, 5, 3, 6, 7]
+ *
  */
 public class TreeQian {
     public static void main(String[] args) {
