@@ -10,7 +10,7 @@ package com.xc.leetcode.listnode;
 public class ListNodeRevertFromMtoN {
     public static void main(String[] args) {
         ListNode listNodeByArray = ListNodeHelper.getListNodeByArray(new int[]{1, 2, 3, 4, 5});
-        ListNode test = test(listNodeByArray, 2, 4);
+        ListNode test = reverseBetween(listNodeByArray, 2, 4);
         ListNodeHelper.print(test);
     }
 
@@ -60,6 +60,57 @@ public class ListNodeRevertFromMtoN {
             root = next;
         }
         return pre;
+    }
+
+    //以下是官方的解法
+    public static ListNode reverseBetween(ListNode head, int left, int right) {
+        // 因为头节点有可能发生变化，使用虚拟头节点可以避免复杂的分类讨论
+        ListNode dummyNode = new ListNode(-1);
+        dummyNode.next = head;
+
+        ListNode pre = dummyNode;
+        // 第 1 步：从虚拟头节点走 left - 1 步，来到 left 节点的前一个节点
+        // 建议写在 for 循环里，语义清晰
+        for (int i = 0; i < left - 1; i++) {//1-2-3-4-5
+            pre = pre.next;//比如left是2，则需要拿到1这个结点，也就是虚拟节点的next结点
+        }
+
+        // 第 2 步：从 pre 再走 right - left + 1 步，来到 right 节点
+        ListNode rightNode = pre;
+        for (int i = 0; i < right - left + 1; i++) {
+            rightNode = rightNode.next;
+        }
+
+        // 第 3 步：切断出一个子链表（截取链表）
+        ListNode leftNode = pre.next;
+        ListNode curr = rightNode.next;
+
+        // 注意：切断链接，把中间的部分取出来，然后才进行翻转
+        pre.next = null;
+        rightNode.next = null;
+
+        // 第 4 步：同第 206 题，反转链表的子区间
+        //这里没有返回链表，其实不需要知道返回的链表，只要把
+        reverseLinkedList(leftNode);
+
+        // 第 5 步：接回到原来的链表中
+        pre.next = rightNode;//先把前半部分接上
+        leftNode.next = curr;//接着把后半部分接上
+        return dummyNode.next;//最后返回虚拟节点的next位置就是我们最后的链表
+    }
+
+    private static void reverseLinkedList(ListNode head) {
+        // 也可以使用递归反转一个链表
+        ListNode pre = null;
+        ListNode cur = head;
+
+        while (cur != null) {
+            ListNode next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+        ListNodeHelper.print(head);
     }
 
 }

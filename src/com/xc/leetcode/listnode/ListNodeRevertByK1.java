@@ -17,6 +17,8 @@ public class ListNodeRevertByK1 {
         ListNode prev = null;//上一个结点
         int i = 0;
         int length = 0;
+        //其实这里和上一道题的区别就是每次在翻转的时候需要获取到链表剩余的长度，
+        // 如果长度不够k位就不进行后续的翻转操作了，所以时间复杂度上要有个先遍历的过程
         while (listNode != null) {
             listNode = listNode.next;
             length++;

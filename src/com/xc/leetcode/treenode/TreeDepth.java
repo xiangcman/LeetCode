@@ -5,7 +5,9 @@ package com.xc.leetcode.treenode;
  */
 public class TreeDepth {
     public static void main(String[] args) {
-
+        TreeNode init = TreeNodeHelper.init();
+        int depth = getDepth(init);
+        System.out.println("depth = " + depth);
     }
 
     private static int getDepth(TreeNode root) {

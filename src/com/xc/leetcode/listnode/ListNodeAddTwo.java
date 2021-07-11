@@ -26,7 +26,7 @@ public class ListNodeAddTwo {
             int sum = x + y + carry;   //计算当前值
             carry = sum / 10;  //计算进位
             ListNode current = new ListNode(sum % 10);  //计算出结果中，当前位数的数值。
-            current.next = pre;
+            current.next = pre;//在这个位置已经反转上了
             pre = current;
             if (v1 != null) v1 = v1.next;
             if (v2 != null) v2 = v2.next;

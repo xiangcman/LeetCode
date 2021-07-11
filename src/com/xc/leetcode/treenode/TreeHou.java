@@ -6,8 +6,16 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * 二叉树的后序遍历:先是左结点，然后是右结点，然后才是当前结点
- */
+ * /**
+ *  * 二叉树的后序遍历:先是左结点，然后是右结点，然后才是当前结点
+ *              *   1
+ *              * /  \
+ *           *   2    3
+ *           *  / \  / \
+ *           * 4  5 6  7
+ *  *
+ *  * 输出：[4, 5, 2, 6, 7, 3, 1]
+ *  **/
 public class TreeHou {
     public static void main(String[] args) {
         TreeNode init = TreeNodeHelper.init();

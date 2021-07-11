@@ -14,8 +14,8 @@ public class ListNodeIsLoop {
         ListNode fast = listNode;
         ListNode slow = listNode;
         while (fast != null && slow != null && fast.next != null) {
-            fast = fast.next.next;
-            slow = slow.next;
+            fast = fast.next.next;//每次跳过两个节点
+            slow = slow.next;//跳过一个节点
             if (fast == slow) {
                 return true;
             }
