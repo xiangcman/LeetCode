@@ -4,7 +4,12 @@ package com.xc.leetcode.listnode;
  * 删除链表中倒数第k个结点
  */
 public class RemoveNthFromEnd {
-    public ListNode removeNthFromEnd(ListNode head, int n) {
+    public static void main(String[] args) {
+        ListNode listNode = removeNthFromEnd(ListNodeHelper.getListNodeByArray(new int[]{1, 2, 3, 4, 5}), 2);
+        ListNodeHelper.print(listNode);
+    }
+
+    public static ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
         ListNode first = head;

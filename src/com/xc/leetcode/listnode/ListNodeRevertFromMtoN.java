@@ -82,7 +82,7 @@ public class ListNodeRevertFromMtoN {
         }
 
         // 第 3 步：切断出一个子链表（截取链表）
-        ListNode leftNode = pre.next;
+        ListNode leftNode = pre.next;//先取出对应的节点，下面把相应的节点置为null
         ListNode curr = rightNode.next;
 
         // 注意：切断链接，把中间的部分取出来，然后才进行翻转
@@ -90,12 +90,12 @@ public class ListNodeRevertFromMtoN {
         rightNode.next = null;
 
         // 第 4 步：同第 206 题，反转链表的子区间
-        //这里没有返回链表，其实不需要知道返回的链表，只要把
+        //这里没有返回链表，其实不需要知道返回的链表，只要把链表接上就ok
         reverseLinkedList(leftNode);
 
         // 第 5 步：接回到原来的链表中
-        pre.next = rightNode;//先把前半部分接上
-        leftNode.next = curr;//接着把后半部分接上
+        pre.next = rightNode;//先把前半部分接上，这里为什么是rightNode呢，因为反转后，rightNode节点其实就是反转后的头节点
+        leftNode.next = curr;//接着把后半部分接上，反转后leftNode节点就是反转后的尾结点了
         return dummyNode.next;//最后返回虚拟节点的next位置就是我们最后的链表
     }
 

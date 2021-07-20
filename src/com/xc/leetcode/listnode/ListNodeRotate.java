@@ -1,13 +1,18 @@
 package com.xc.leetcode.listnode;
 
 /**
- * 链表旋转
+ * 链表旋转：从
  * 比如链表是1->2->3->4->5
  * 如果k是2的话，那结果就是4->5->1-2->3
  * https://leetcode-cn.com/problems/rotate-list/
  */
 public class ListNodeRotate {
-    public ListNode rotateRight(ListNode head, int k) {
+    public static void main(String[] args) {
+        ListNode listNode = rotateRight(ListNodeHelper.getListNodeByArray(new int[]{1, 2, 3, 4, 5}), 2);
+        ListNodeHelper.print(listNode);
+    }
+
+    public static ListNode rotateRight(ListNode head, int k) {
         if (k == 0 || head == null || head.next == null) {
             return head;
         }
@@ -24,7 +29,7 @@ public class ListNodeRotate {
             //此时实际上正好还是原来的链表
             return head;
         }
-        //1->2->3->4->5->1->2->3->4->5
+        //1->2->3->4->5->1->2->3->4->5...
         iter.next = head;//把头结点的连接到尾结点处
         while (add-- > 0) {//找出要旋转的位置
             iter = iter.next;
