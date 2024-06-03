@@ -13,10 +13,9 @@ public class ListNodeRevert {
      * @param listNode
      */
     private static ListNode revert(ListNode listNode) {
-        ListNode next = listNode;//下一个结点
         ListNode prev = null;//上一个结点
         while (listNode != null) {
-            next = listNode.next;
+            ListNode next = listNode.next;
             listNode.next = prev;//把上一个结点指向当前结点的next结点，顺序颠倒了
             prev = listNode;
             listNode = next;

@@ -16,11 +16,13 @@ public class InsertSort {
         for (int i = 1; i < a.length; i++) {
             int temp = a[i];
             int j = i - 1;
-            while (j >= 0 && a[j] > temp) {//如果前面的数一直大于当前的值的话，则一直循环处理
+            while (j >= 0 && a[j] > temp) {//如果前面的数一直大于后面的值的话，则一直循环处理
                 a[j + 1] = a[j];//把数组前面的一个值给当前的元素
                 j--;
             }
             a[j + 1] = temp;
+            System.out.println(Arrays.toString(a));
+            System.out.println("=====");
         }
     }
 }

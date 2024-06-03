@@ -21,6 +21,7 @@ public class ListNodeSwapByK {
             right = right.next;
             cur = cur.next;
         }
+        //互换值是否合适
         int temp = right.val;
         right.val = left.val;
         left.val = temp;

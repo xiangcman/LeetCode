@@ -33,7 +33,12 @@ public class QuickSort {
                 i++;
                 j--;
             }
+            System.out.println(Arrays.toString(a));
+            System.out.println("i:" + i);
+            System.out.println("j:" + j);
+            System.out.println("===========");
         }
+        System.out.println("-------------");
         System.out.println(Arrays.toString(a));
         System.out.println("i:" + i);
         System.out.println("j:" + j);

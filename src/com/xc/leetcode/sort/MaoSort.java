@@ -22,6 +22,8 @@ public class MaoSort {
                     a[j] = a[j + 1];
                     a[j + 1] = temp;
                 }
+                System.out.println(Arrays.toString(a));
+                System.out.println("====");
             }
         }
     }

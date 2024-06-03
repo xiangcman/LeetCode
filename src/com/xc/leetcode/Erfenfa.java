@@ -15,7 +15,7 @@ public class Erfenfa {
         while (left <= right) {//当左边的起点和右边的起点相等的时候就不比较了
             int temp = (left + right) / 2;
             int pivot = a[temp];
-            if (find < pivot) {//如果要找的数在中间数的左边，则在左侧找
+            if (find < pivot) {//如果要找的数比中间数要小，则在左侧找
                 right = temp - 1;
             } else if (find > pivot) {
                 left = temp + 1;
