@@ -5,6 +5,8 @@ import kotlin.jvm.JvmStatic
 object Main {
     @JvmStatic
     fun main(args: Array<String>) {
+        val test = Test()
+        test.test(Test())
 //        val test = Test()
 //        test.test1(2)
 

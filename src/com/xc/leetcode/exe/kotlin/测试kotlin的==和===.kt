@@ -13,6 +13,10 @@ class Test {
         println("result:$b")
     }
 
+    fun test2(test: Test) {
+        println("result:${this==test}")
+    }
+
     override fun equals(other: Any?): Boolean {
         return true
     }

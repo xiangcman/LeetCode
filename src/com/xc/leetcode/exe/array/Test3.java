@@ -14,18 +14,20 @@ import java.util.Set;
  */
 public class Test3 {
     public static void main(String[] args) {
-        int i = longestConsecutive(new int[]{100, 4, 200, 1, 3});
+//        int i = longestConsecutive(new int[]{100, 4, 200, 1, 3});
+        int i = longestConsecutive(new int[]{100, 4, 200, 1, 3,2});
         System.out.println("i = " + i);
     }
 
     public static int longestConsecutive(int[] nums) {
+        //先把每一个数字添加到set集合中
         Set<Integer> integerSet = new HashSet<>();
         for (int num : nums) {
             integerSet.add(num);
         }
         int result = 1;
         for (int num : nums) {
-            if (!integerSet.contains(num - 1)) {
+            if (!integerSet.contains(num - 1)) {//为了防止重复计算降序这种数的个数，所以只计算升序的数值的个数
                 int current = num;
                 int currentStack = 1;
                 while (integerSet.contains(current + 1)) {

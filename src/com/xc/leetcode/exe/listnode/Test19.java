@@ -17,6 +17,7 @@ public class Test19 {
         String s = Arrays.toString(integers.toArray());
         System.out.println("s = " + s);
     }
+
     //借助栈的思想，因为栈是先进后出
     public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
         Stack<Integer> stack = new Stack<>();

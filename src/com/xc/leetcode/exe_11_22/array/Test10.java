@@ -1,4 +1,4 @@
-package com.xc.leetcode.exe.array;
+package com.xc.leetcode.exe_11_22.array;
 
 /**
  * 给你一个有序数组 nums ，请你 原地 删除重复出现的元素，使得出现次数超过两次的元素只出现两次 ，返回删除后数组的新长度。
@@ -11,20 +11,21 @@ package com.xc.leetcode.exe.array;
  */
 public class Test10 {
     public static void main(String[] args) {
-        int i = removeDuplicates(new int[]{1, 1, 1, 2, 2, 3});
-        System.out.println("i = " + i);
+        int[] array = new int[]{1, 1, 1, 2, 2, 3};
+        int length = getLength(array);
+        System.out.println("length = " + length);
+
     }
 
-    public static int removeDuplicates(int[] nums) {
-        //定义两个指针，一个快，一个慢
-        if (nums.length <= 2) {
-            return nums.length;
+    private static int getLength(int[] array) {
+        if (array.length <= 2) {
+            return array.length;
         }
         int slow = 2;
         int fast = 2;
-        while (fast < nums.length) {
-            if (nums[slow - 2] != nums[fast]) {//如果当前数字和慢指针的前两个
-                nums[slow] = nums[fast];//slow是最后填充的大小，
+        while (fast < array.length) {
+            if (array[slow - 2] != array[fast]) {
+                array[slow] = array[fast];
                 slow++;
             }
             fast++;

@@ -1,5 +1,8 @@
 package com.xc.leetcode.exe.array;
 
+/**
+ *
+ */
 public class Singleton {
     //定义一个该类的静态变量
     public volatile static Singleton singleton;

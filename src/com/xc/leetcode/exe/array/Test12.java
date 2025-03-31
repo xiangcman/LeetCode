@@ -13,8 +13,8 @@ public class Test12 {
         ArrayList<Integer> result = new ArrayList<>();
         int left = 0;
         int top = 0;
-        int right = matrix[0].length;
-        int down = matrix.length;
+        int right = matrix[0].length;//有边界定义为第一行的最后一列
+        int down = matrix.length;//down定义为行数
         while (true) {
             for (int i = left; i < right; i++) {
                 result.add(matrix[top][i]);//第一排打印完了

@@ -1,4 +1,8 @@
-package com.xc.leetcode.exe.array;
+package com.xc.leetcode.exe_11_22.array;
+
+import sun.misc.LRUCache;
+
+import java.util.Arrays;
 
 /**
  * 给你一个未排序的整数数组 nums ，请你找出其中没有出现的最小的正整数。
@@ -13,6 +17,7 @@ public class Test23 {
         int i = firstMissingPositive(new int[]{3, 4, -1, 1, 9, -5});
         System.out.println("i = " + i);
     }
+
     /**
      * 这个题的思路就是缺失的数一定是在1-N之间，N是数组的长度
      * 第一步：将数组中小于0的数给附上N+1
@@ -25,21 +30,24 @@ public class Test23 {
     public static int firstMissingPositive(int[] nums) {
         int length = nums.length;
         for (int i = 0; i < nums.length; i++) {
-            if (nums[i] <= 0) {
+            int num = nums[i];
+            if (num <= 0) {
                 nums[i] = length + 1;
             }
         }
-        //这样一来，所有小于0的数都是等于length+1了，数组中没有负数
         for (int i = 0; i < nums.length; i++) {
-            if (nums[i] <= length) {
-                //这就是第二步：将数字大小作为下标，然后取反，用绝对值取反
-                nums[nums[i] - 1] = -Math.abs(nums[nums[i] - 1]);
+            //在比较的时候，需要取值的绝对值，因为下面会给对应的索引上的值给置为负数了，所以此处需要还原下它的值
+            int num = Math.abs(nums[i]);
+            if (num < length) {
+                //小于length的值对应的索引值给它置为负数
+                nums[num - 1] = -Math.abs(nums[num - 1]);
             }
+            String s = Arrays.toString(nums);
+            System.out.println("s = " + s);
         }
         for (int i = 0; i < nums.length; i++) {
             int num = nums[i];
-            if (num > 0) {
-                //如果发现大于0，则返回
+            if (num > 0 && num < length) {
                 return i + 1;
             }
         }
