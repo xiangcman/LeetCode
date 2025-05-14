@@ -4,6 +4,7 @@ package com.xc.leetcode;
  * 二分法查找
  */
 public class Erfenfa {
+
     public static void main(String[] args) {
         int[] a = new int[]{1, 2, 3, 4, 5};
         System.out.println("find:" + find(a, 0));
